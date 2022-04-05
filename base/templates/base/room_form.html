@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+  <main class="create-room layout">
+    <div class="container">
+      <!-- <div class="layout__box"> -->
+        <div class="container col-lg-6 card border border-2 rounded p-3 mt-5">
+        <div class="layout__boxHeader">
+          <div class="layout__boxTitle  d-flex flex-start ">
+            <a href="{% url 'home' %}" class="m-2">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32">
+                <title>arrow-left</title>
+                <path
+                  d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                </path>
+              </svg>
+            </a>
+            <h3 class="m-1">Create/Update Study Room</h3>
+          </div>
+        </div>
+        
+          <form class="form" action="" method="post">
+            {% csrf_token %}
+
+            <div class=" form">
+              <label for="room_topic " class="form-label">Topic</label>
+              <input required type="text"  value="{{room.topic.name}}" name="topic" id="room_topic" list="topic-list" />
+              <datalist id="topic-list">
+                <select id="room_topic">
+                  <option value="">Select your topic</option>
+                  {% for topic in topics %}
+                  <option value="{{topic.name}}">{{topic.name}}</option>
+                  {% endfor %}
+                  <!-- <option value="">Django</option> -->
+                </select>
+              </datalist>
+            </div>
+
+            <div class="form__group form form-label">
+              <label for="room_name">Room Name</label>
+              <!-- <input id="room_name" name="name" type="text" placeholder="Room Name" /> -->
+              <!-- <div class="form-control"> -->
+              {{form.name}}
+              <!-- </div> -->
+            </div>
+
+
+
+            <div class="form__group form-label">
+              <label for="room_about">About</label>
+              <!-- <textarea name="description" class="form-label" id="description" placeholder="Write about your study group..." value="{{form.description}}"></textarea> -->
+              {{form.description}}
+            </div>
+            <div class="form__action">
+              <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
+              <button class="btn btn--main" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      <!-- </div> -->
+    </div>
+  </main>
+
+  {% endblock %}

@@ -1,0 +1,55 @@
+.avatar{
+    /* width:50px; */
+    border-radius: 200px;
+    border: 2px rgb(157, 0, 255) solid;
+}
+.avatar--small{
+    width:35px;
+}
+.avatar--medium {
+    width: 45px;
+}
+.avatar--large{
+    width: 100px;
+}
+.btn-outline-info{
+    border-radius: 100px;
+    border: 2px rgb(157, 0, 255) solid;
+}
+
+.conversations{
+    width: 100%;
+    height: 65vh;
+    position: relative;
+    overflow: scroll;
+    display:flex; flex-direction:column-reverse;
+}
+
+form>input{
+    border: 2px solid black;
+    border-radius: 100px;
+    width: 100%;
+}
+
+label{
+    display: inline-block;
+    padding-top: 10px;
+}
+#id_description, #id_name, #room_topic, #username, #password , #id_username, #id_email, #id_password1, #id_password2{
+    border: 1px solid rgb(187, 0, 255);
+    border-radius: 3px;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    
+
+}
+
+textarea{
+    height: 4em;
+    width: 50em;
+}
+
+a{
+    text-decoration: unset;
+}
