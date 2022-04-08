@@ -73,13 +73,14 @@ def home(request):
     )
 
     topics = Topic.objects.all()[0:5]
+    # links = Link.objects.all()
     room_count = rooms.count()
     # room_messages = Message.objects.filter(Q(room__topic__name__icontains=q))[0:3]
     
     User1 = request.user
     room_messages = User1.message_set.all()[0:3]
 
-    context = {'rooms': rooms, 'topics': topics, 'room_count': room_count, 'room_messages': room_messages}
+    context = {'rooms': rooms, 'topics': topics,  'room_count': room_count, 'room_messages': room_messages}
     return render(request, 'base/home.html', context)
 
 @login_required(login_url='login')
@@ -158,6 +159,7 @@ def updateUser(request,pk):
 def createRoom(request):
     form = RoomForms()
     topics = Topic.objects.all()
+    # form2 = TopicForm()
     if request.method == 'POST':
         topic_name = request.POST.get('topic')
         topic, created = Topic.objects.get_or_create(name=topic_name)
@@ -168,6 +170,7 @@ def createRoom(request):
             name=request.POST.get('name'),
             description=request.POST.get('description'),
         )
+        # link = 
         return redirect('home')
 
     context = {'form': form, 'topics': topics}

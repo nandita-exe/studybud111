@@ -4,21 +4,21 @@
 {% block content %}
 
 
-    <main class="auth layout">
+    <main class=" layout">
       <div class="row">
-      <div class="container col-lg-6">
+      <div class="container col-lg-6 d-none d-md-block">
         <img src="{% static 'images/Texting-bro.svg' %}" alt="">
       </div>
       {% if page == 'login' %}
       <!-- <div class="main2"> -->
       <div class=" col-lg-5  border border-2 rounded p-0 mt-5 me-5">
-        <div class="layout__box2 ">
+        <div class="card">
           <!-- <div class="layout__boxHeader2"> -->
             <div class="layout__boxTitle2 card-header text-uppercase text-center">
               <h3>Login</h3>
             </div>
           <!-- </div> -->
-          <div class="layout__body2 container">
+          <div class="card-body container">
             <h4 class="auth__tagline text-uppercase text-center">Find your study partner</h2>
 
             <form class="form" action="" method="post">
@@ -58,9 +58,9 @@
               </button>
             </form>
 
-            <div class="auth__action text-center m-3">
+            <div class=" text-center m-3">
               <p class="m-0 p-0">Haven't signed up yet?</p>
-              <a href="{% url 'register' %}" class="m-0 p-0">Sign Up</a>
+              <a href="{% url 'register' %}" class="m-0 p-0 fw-bold" style="color:#8c00ff">Sign Up</a>
             </div>
           </div>
         </div>
@@ -70,20 +70,20 @@
 
       {% else %}
       <div class="container col-lg-5 card border border-2 rounded p-0 mt-5 me-5">
-        <div class="layout__box2">
-          <div class="layout__boxHeader2">
-            <div class="layout__boxTitle2 card-header text-uppercase text-center">
+        <div class="">
+          <div class="">
+            <div class="card-header text-uppercase text-center">
               <h3>Sign up</h3>
             </div>
           </div>
-          <div class="layout__body2 container p-3">
-            <h4 class="auth__tagline text-uppercase text-center">Find your study partner</h2>
+          <div class="container card-body p-3">
+            <h4 class=" text-uppercase text-center">Find your study partner</h2>
 
             <form class="form" action="" method="POST">
               {% csrf_token %}
     
               {% for field in form %}
-              <div class="form__group form__group">
+              <div class="">
                 <label for="room_name">{{field.label}}</label>
                 {{field}}
               </div>
@@ -105,14 +105,10 @@
               </button>
             </form>
 
-            <!-- <div class="auth__action">
-              <p>Already have an account?</p>
-              <a href="{% url 'login' %}" class="btn btn--link">Log In</a>
-            </div> -->
 
-            <div class="auth__action text-center m-3">
+            <div class=" text-center m-3">
               <p class="m-0 p-0">Already have an account?</p>
-              <a href="{% url 'login' %}" class="m-0 p-0">Log In</a>
+              <a href="{% url 'login' %}" class="m-0 p-0 fw-bold" style="color:#8c00ff">Log In</a>
             </div>
           </div>
         </div>

@@ -5,9 +5,9 @@
 
   <main class="update-account layout">
       <div class="container">
-        <div class="layout__box">
-          <div class="layout__boxHeader">
-            <div class="layout__boxTitle">
+        <div class="container col-lg-6 card border border-2 rounded p-3 mt-5">
+          <div class="">
+            <div class="d-flex flex-start">
               <a href="{% url 'user-profile' user.id %}">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                   <title>arrow-left</title>
@@ -19,21 +19,21 @@
               <h3>Edit your profile</h3>
             </div>
           </div>
-          <div class="layout__body">
+          <div class="">
             <form class="form" action="" method="POST" enctype="multipart/form-data">
               {% csrf_token %}
     
               {% for field in form %}
-              <div class="form__group">
-                <label for="profile_pic">{{field.label}}</label>
+              <div class="">
+                <label for="profile_pic" class="form-label">{{field.label}}</label>
                 {{field}}
               </div>
               {% endfor %}
     
     
-              <div class="form__action">
-                <a class="btn btn--dark" href="{% url 'user-profile' user.id %}">Cancel</a>
-                <button class="btn btn--main" type="submit">Update</button>
+              <div class="">
+                <a class="btn " href="{% url 'user-profile' user.id %}">Cancel</a>
+                <button class="btn btn-primary" type="submit">Update</button>
               </div>
             </form>
           </div>

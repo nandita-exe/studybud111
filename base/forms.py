@@ -1,6 +1,7 @@
 from dataclasses import field
+from pyexpat import model
 from django.forms import ModelForm,Textarea, TextInput
-from .models import Room, User, Message
+from .models import Room, User, Message, Topic
 from django.contrib.auth.forms import UserCreationForm
 # from django.contrib.auth.models import User
 from django import forms
@@ -16,6 +17,10 @@ class RoomForms(ModelForm):
         exclude = ['host', 'participants']
 
 
+# class TopicForm(ModelForm):
+#     class Meta:
+#         model = Topic
+#         fields = ['link']
 
 class UserForm(ModelForm):
     class Meta:

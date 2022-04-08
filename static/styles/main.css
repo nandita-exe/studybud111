@@ -1,20 +1,38 @@
+:root{
+--color-main: #8c00ff;
+--color-main-light: #f3e1fb;
+--color-dark: #d7d9eb;
+--color-new:#e0e2f3;
+--color-dark-medium: #a6abd6;
+--color-dark-light: #696d97;
+--color-light: #222121;
+--color-gray: #444343;
+--color-light-gray: #646464;
+--color-bg: #efefef;
+--color-success: #5dd693;
+--color-error: #fc4b0b;
+}
+
 .avatar{
     /* width:50px; */
     border-radius: 200px;
-    border: 2px rgb(157, 0, 255) solid;
+    border: 2px var(--color-main) solid;
 }
 .avatar--small{
     width:35px;
+    height: 35px;
 }
 .avatar--medium {
     width: 45px;
+    height: 45px;
 }
 .avatar--large{
     width: 100px;
+    height: 100px;
 }
 .btn-outline-info{
     border-radius: 100px;
-    border: 2px rgb(157, 0, 255) solid;
+    border: 2px var(--color-main) solid;
 }
 
 .conversations{
@@ -26,7 +44,7 @@
 }
 
 form>input{
-    border: 2px solid black;
+    border: 2px solid var(--color-main);
     border-radius: 100px;
     width: 100%;
 }
@@ -35,7 +53,7 @@ label{
     display: inline-block;
     padding-top: 10px;
 }
-#id_description, #id_name, #room_topic, #username, #password , #id_username, #id_email, #id_password1, #id_password2{
+#id_description, #id_name, #room_topic, #username, #password , #id_username, #id_email, #id_password1, #id_password2, #id_bio{
     border: 1px solid rgb(187, 0, 255);
     border-radius: 3px;
     width: 100%;
@@ -47,9 +65,35 @@ label{
 
 textarea{
     height: 4em;
-    width: 50em;
+    width: 26em;
 }
 
 a{
     text-decoration: unset;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-small, .rounded-pill, .btn-outline-primary, .badge, .bg-primary {
+    background-color: var(--color-main) !important;
+}
+
+body{
+    background-color: var(--color-bg) !important;
+}
+
+.card-header{
+    background-color: var(--color-dark-medium)!important;
+}
+/* .card-body{
+    background-color: var(--color-new)!important;
+} */
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+a, a:hover, a:active, a:visited{
+    text-decoration: none !important;
+    /* color: var(--color-light) !important; */
+}
+
+nav, .navbar, .navbar-expand-lg, .navbar-light, .bg-light{
+    background-color: var(--color-dark) !important;
 }

@@ -23,14 +23,24 @@ class User(AbstractUser):
 
 class Topic(models.Model):
     name = models.CharField(max_length=200)
+    link1 = models.CharField(max_length=250, blank=True)
+    link2 = models.CharField(max_length=250, blank=True)
+    link3 = models.CharField(max_length=250, blank=True)
+    # link4 = models.
     def __str__(self):
         return self.name
+        # return self.link
 
+# class Link(models.Model):
+#     topics = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
+#     link = models.CharField(max_length=250, blank=True)
 
 class Room(models.Model):
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
-    name = models.CharField(max_length=200)
+    # link = models.ForeignKey(Topic,to_field="link", db_column="link", on_delete=models.SET_NULL, null=True)
+    # link = models.ManyToManyField(Topic, blank=True)
+    name = models.CharField(max_length=80)
     description = models.TextField(null=True, blank=True, max_length=150)
     participants = models.ManyToManyField(User, related_name="participants", blank=True)
     updated = models.DateTimeField(auto_now=True)

@@ -16,7 +16,7 @@
           <!-- <div class=""> -->
               
                 <div class="d-flex justify-content-between">
-                  <a href="{% url 'user-profile' message.user.id %}" class="roomListRoom__author my-2 text-decoration-none">
+                  <a style="color:#781ac5" href="{% url 'user-profile' message.user.id %}" class="roomListRoom__author my-2 text-decoration-none">
                     <div class="d-flex flex-col">
                       <img src="{{message.user.avatar.url}}" class="avatar--medium active"/>
                       <div class="ms-3">
@@ -26,7 +26,7 @@
                     </div>
                     {% if request.user == message.user %}
           <div class=" me-2">
-            <a href="{% url 'delete-activity' message.id %}" >
+            <a style="color:#781ac5" href="{% url 'delete-activity' message.id %}" >
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32">
                 <title>remove</title>
                 <path
@@ -50,7 +50,7 @@
           <!-- </div> -->
   
           <!-- <a href="{% url 'user-profile' message.user.id %}"> <h6 class="card-title col-6">@{{message.user.username}}</h6></a> -->
-            <p class="mb-0 pb-0"> replied to “<a href="{% url 'room' message.room.id %}">{{message.room}}</a>”</p>
+            <p class="mb-0 pb-0"> replied to “<a style="color:#781ac5" href="{% url 'room' message.room.id %}">{{message.room}}</a>”</p>
             <small class="mt-0 pt-0">{{message.created|timesince}} ago</small>
     
     
@@ -77,7 +77,7 @@
   <div class="layout__box">
     <div class="layout__boxHeader">
       <div class="layout__boxTitle">
-        <a href="{% url 'home' %}">
+        <a style="color:#781ac5" href="{% url 'home' %}">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
             <title>arrow-left</title>
             <path

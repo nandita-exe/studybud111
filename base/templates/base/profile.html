@@ -39,7 +39,7 @@
               <h3>{{user.name}}</h3>
               <p>@{{user.username}}</p>
               {% if request.user == user %}
-              <a href="{% url 'update-user' user.id %}" class="btn btn-outline-primary btn-pill rounded-pill">Edit Profile</a>
+              <a href="{% url 'update-user' user.id %}" class="btn btn-outline-primary btn-pill rounded-pill text-white fw-bold">Edit Profile</a>
               {% endif %}
             </div>
           </div>
@@ -55,7 +55,7 @@
           <div class="mb-3 ">
             <div class="d-flex flex-row justify-content-between">
             <div class="flex">
-            <h4>Study Rooms hosted by {{request.user.name}}</h4>
+            <h4>Group created by {{request.user.name}}</h4>
             <p></p>
           </div>
   <!-- <div class="flex-end">
